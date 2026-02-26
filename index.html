@@ -39,12 +39,36 @@ const PEOPLE = {
   stile: {
     summary: "Cuore creativo del brand. Sviluppa l\u2019identit\u00E0 estetica di ogni collezione: modelli, materiali, colori, accessori metallici.",
     hierarchy: [
-      { name: "Claudia", role: "Creative Lead", level: 0, desc: "Guida il cuore estetico del brand. Benedetta definisce la visione creativa e le direzioni macro, Claudia la traduce in ricerca, concept e sviluppo operativo quotidiano. Ricerca estetica: tendenze, materiali, ispirazioni, moodboard. Sviluppo concept di collezione. Supervisione sviluppo di ogni modello: proporzioni, materiali, colori, dettagli costruttivi. Propone palette colori, materiali, finiture per ogni stagione. Coordina Elisa nel lavoro quotidiano. Supervisiona Domitilla per accessori metallici (chiusure, ferramenti). Prepara presentazione collezioni per la Direzione. La validazione finale su ogni modello che passa in produzione \u00E8 di Benedetta" },
-      { name: "Elisa", role: "Operations & Production Coord.", level: 0, badge: "Doppio ruolo",
-        desc: "Ponte operativo tra Stile e resto dell\u2019azienda. Coordina fornitori e laboratori per sviluppo prodotto. Compila e aggiorna schede tecniche, gestisce passaggio prototipi a Produzione (Giulio). Supervisiona campionari e timing campionari. Gestisce magazzino materiali e campioni Stile (separato da Produzione e e-commerce). Cataloga materiali e aggiorna database Notion per area Stile. Segreteria operativa per Comunicazione: organizza shooting (data, location, creativi, materiali), gestisce logistica fornitori creativi (Ornella, Ilaria, HOON). Supporto diretto a Benedetta su task operative nei momenti di minor carico. Ruolo principale nello Stile: in caso di conflitto di priorit\u00E0 Stile/Comunicazione/Direzione, si confronta con Benedetta" },
+      { name: "Claudia", role: "Creative Lead", level: 0,
+        mission: "Guida il cuore estetico del brand. Benedetta definisce la visione creativa e le direzioni macro, Claudia la traduce in ricerca, concept e sviluppo operativo quotidiano. La validazione finale su ogni modello che passa in produzione \u00E8 di Benedetta.",
+        tasks: [
+          "Ricerca estetica: tendenze, materiali, ispirazioni, moodboard, archivio riferimenti",
+          "Sviluppo concept di collezione in dialogo con Benedetta",
+          "Supervisione sviluppo ogni modello: proporzioni, materiali, colori, dettagli costruttivi",
+          "Proposta palette colori, materiali, finiture per ogni stagione (selezione finale con Benedetta)",
+          "Supervisione campionario con Elisa: coordinamento tempi e qualit\u00E0 con Produzione",
+          "Supervisione Domitilla per accessori metallici (chiusure, ferramenti)",
+          "Coordinamento Elisa nel lavoro quotidiano Ufficio Stile",
+          "Preparazione presentazione collezioni per la Direzione"
+        ]
+      },
+      { name: "Elisa", role: "Operations & Production Coord.", level: 0, badge: "Triplo ruolo",
+        mission: "Ponte operativo tra Stile e resto dell\u2019azienda. Ruolo principale nello Stile. In caso di conflitto di priorit\u00E0 Stile/Comunicazione/Direzione, si confronta con Benedetta.",
+        tasks: [
+          "Compilazione e aggiornamento schede tecniche per ogni modello",
+          "Coordinamento fornitori materiali e laboratori esterni: tempi, qualit\u00E0, follow-up",
+          "Gestione operativa campionario: tempi, coordinamento Stile-Produzione, tracking prototipi",
+          "Passaggio schede tecniche e materiali a Giulio (Produzione)",
+          "Gestione magazzino materiali e campioni Stile (separato da Produzione e e-commerce)",
+          "Catalogazione materiali, campioni, riferimenti e aggiornamento database Notion",
+          "Segreteria operativa shooting: data, location, creativi esterni (Ornella, Ilaria, HOON), materiali",
+          "Gestione logistica fornitori creativi per Comunicazione",
+          "Supporto diretto a Benedetta su task operative nei momenti di minor carico"
+        ]
+      },
     ],
     externals: [
-      { name: "Domitilla", what: "Design e progettazione accessori metallici (chiusure, ferramenti), ricerca materiali e fornitori accessori, coordinamento con fornitori per prototipi e sviluppo. Riporta a Claudia + Benedetta" },
+      { name: "Domitilla", what: "Design e progettazione accessori metallici (chiusure, ferramenti), ricerca materiali e fornitori, coordinamento prototipi. Riporta a Claudia + Benedetta" },
     ],
     crossLinks: [
       { person: "Elisa", to: "Giulio", toDept: "produzione", type: "Ponte operativo", why: "Coordina il passaggio di schede tecniche e prototipi dallo Stile alla Produzione per il campionario" },
@@ -54,8 +78,30 @@ const PEOPLE = {
   comunicazione: {
     summary: "Custode della voce del brand. Governa tutto ci\u00F2 che il brand dice, mostra e comunica al mondo: contenuti, immagini, tono, relazioni con la stampa, piano editoriale, identit\u00E0 visiva. La direzione strategica viene da Benedetta; Roberta la traduce in esecuzione su tutti i canali.",
     hierarchy: [
-      { name: "Roberta", role: "Communication Manager \u2014 Regia Editoriale & PR Strategy", level: 0, desc: "Piano editoriale su tutti i canali (temi, formati, frequenza). Regia contenuti e approvazione pre-pubblicazione. PR strategy, relazioni stampa, coordinamento ufficio stampa Milano, rassegna stampa, inviti, press day, seeding. Direzione collaborazioni influencer e talent (selezione, negoziazione, brief, calendario). Regia shooting fotografici e video con creativi esterni. Produzione contenuti creativi per ADV e newsletter (visual, copy, format). Governance editoriale del sito (pagine, copy, immagini, coerenza brand). Custode operativa del tono di voce del brand" },
-      { name: "Marianna", role: "Social Media Operations", level: 1, reportsTo: "Roberta", desc: "Scheduling, publishing, community management (IG, DM, commenti), coordinamento content contributors (HOON dalla Bottega), gestione asset library. Opera sotto regia di Roberta. Pubblica in autonomia tutto ci\u00F2 che \u00E8 nel calendario approvato. Roberta interviene solo su contenuti sensibili o fuori piano" },
+      { name: "Roberta", role: "Communication Manager \u2014 Regia Editoriale & PR Strategy", level: 0,
+        mission: "Custode operativa del tono di voce del brand. Traduce la direzione strategica di Benedetta in esecuzione su tutti i canali.",
+        tasks: [
+          "Piano editoriale tutti i canali: temi, formati, frequenza",
+          "Regia contenuti e approvazione pre-pubblicazione",
+          "PR strategy: relazioni stampa, coordinamento ufficio stampa Milano",
+          "Rassegna stampa, inviti, press day, seeding",
+          "Direzione collaborazioni influencer e talent: selezione, negoziazione, brief, calendario",
+          "Regia shooting fotografici e video con creativi esterni",
+          "Produzione contenuti creativi per ADV e newsletter: visual, copy, format",
+          "Governance editoriale del sito: pagine, copy, immagini, coerenza brand",
+          "Custode tono di voce del brand"
+        ]
+      },
+      { name: "Marianna", role: "Social Media Operations", level: 1, reportsTo: "Roberta",
+        mission: "Opera sotto regia di Roberta. Pubblica in autonomia tutto ci\u00F2 che \u00E8 nel calendario approvato. Roberta interviene solo su contenuti sensibili o fuori piano.",
+        tasks: [
+          "Scheduling e publishing su tutti i canali social",
+          "Community management: IG, DM, commenti",
+          "Coordinamento content contributors (HOON dalla Bottega)",
+          "Gestione asset library: organizzazione, tagging, archivio",
+          "Pubblicazione autonoma contenuti da calendario approvato"
+        ]
+      },
     ],
     externals: [
       { name: "Ornella", what: "Fotografia professionale" },
@@ -70,24 +116,34 @@ const PEOPLE = {
       { area: "Newsletter", comms: "Produce contenuti: testi, tono, layout editoriale. Propone piano newsletter alla Direzione", digital: "Governa Klaviyo: automazioni, segmenti, deliverability, tech. Porta dati aperture e conversioni" },
       { area: "Sito", comms: "Content owner: pagine editoriali, copy, immagini, coerenza brand. Governance editoriale", digital: "Tech owner: backlog, release, performance, hosting, connettore. Governance tecnica" },
     ],
-    notInScope: [
-      "Infrastruttura tecnica del sito (backlog, release, hosting, performance) \u2192 Digital Lead (Fabio)",
-      "Piattaforma CRM / Klaviyo (configurazione, automazioni, deliverability, segmenti) \u2192 Digital Lead (Fabio)",
-      "Budget e performance campagne ADV (targeting, ROAS, ottimizzazione, piattaforme) \u2192 Digital Lead (Fabio)",
-      "Relazione cliente B2C (vendite, resi, riparazioni, community, WhatsApp) \u2192 E-commerce Manager (Caterina)",
-      "Gestione richieste press e campioni (ricezione, spedizione, tracking, rientri) \u2192 E-commerce Manager (Caterina)",
-    ],
-    openItems: [
-      "Audit influencer e collaborazioni da parte di Roberta: definire processo, budget, criteri di selezione e calendario",
-      "Ridefinizione strategica piano editoriale Instagram brand",
-      "Definire output e scadenze chiare: giorno del mese per consegna ADV, comunicato stampa, ecc.",
-    ],
   },
   digital: {
     summary: "Governa la presenza digitale del brand: e-commerce, CRM, sito web, dati, ADV e automazioni. Fabio e Caterina sono pari livello con ownership distinte: nessuno dei due coordina l\u2019altro. Fabio governa l\u2019infrastruttura e i canali digitali, Caterina governa la relazione con il cliente finale.",
     hierarchy: [
-      { name: "Fabio", role: "Digital Lead", level: 0, desc: "Responsabile unico infrastruttura digitale. Sito web: tech lead completo (backlog, release, QA, performance, hosting, integrazioni). Connettore Notion/WooCommerce: sviluppo e manutenzione ponte dati tra database Notion e WooCommerce, mappatura campi 1:1, sincronizzazione, troubleshooting. Migrazione CRM Mailchimp \u2192 Klaviyo: setup, import contatti da 6 fonti, automazioni, segmenti, deliverability, integrazione sito e Notion. Governance campagne ADV Meta e Google: budget, targeting, ROAS, ottimizzazione, ciclo refresh strutturato. Blog SEO e CMS. Admin tech Notion: governance workspace, troubleshooting, supporto adozione strumenti digitali e Claude AI per il team. Coordina eventuali risorse esterne (sviluppatori, consulenti). Traduce la direzione strategica in progetti digitali con timeline, indicatori e risultati misurabili" },
-      { name: "Caterina Nobili", role: "E-commerce Manager & Owner B2C", level: 0, badge: "Owner cliente B2C", desc: "Owner relazione cliente B2C end-to-end: dalla scoperta all\u2019acquisto al post-vendita. Vendite online e gestione ordini WooCommerce (inserimento Notion, passaggio a Debora per pacco, Valentina per DDT/corriere, invio tracking, chiusura). Shopping experience Bottega: appuntamenti Calendly, accoglienza, tour, personalizzazione, chiusura, follow-up entro 24h, note post-visita. Press operations: gestione autonoma press@benedettabruzziches.com, preparazione campioni, spedizione con tracking, rientri, solleciti, catalogo press dinamico su Notion, rubrica contatti stampa. Riparazioni: repair@benedettabruzziches.com, valutazione garanzia/pagamento, preventivo, passaggio a Giulio, tracking, rientro al cliente. Resi B2C, magazzino sito e-commerce. WhatsApp/SMS marketing. Community mobile e clienteling: lista VIP, early access, inviti, cura rapporto personale" },
+      { name: "Fabio", role: "Digital Lead", level: 0,
+        mission: "Responsabile unico infrastruttura digitale. Traduce la direzione strategica in progetti digitali con timeline, indicatori e risultati misurabili.",
+        tasks: [
+          "Sito web: tech lead completo (backlog, release, QA, performance, hosting, integrazioni)",
+          "Connettore Notion/WooCommerce: sviluppo e manutenzione ponte dati, mappatura campi 1:1, sincronizzazione, troubleshooting",
+          "Migrazione CRM Mailchimp \u2192 Klaviyo: setup, import contatti da 6 fonti, automazioni, segmenti, deliverability, integrazione sito e Notion",
+          "Governance campagne ADV Meta e Google: budget, targeting, ROAS, ottimizzazione, ciclo refresh strutturato",
+          "Blog SEO e CMS",
+          "Admin tech Notion: governance workspace, troubleshooting, supporto adozione strumenti digitali e Claude AI per il team",
+          "Coordinamento risorse esterne (sviluppatori, consulenti)"
+        ]
+      },
+      { name: "Caterina Nobili", role: "E-commerce Manager & Owner B2C", level: 0, badge: "Owner cliente B2C",
+        mission: "Owner relazione cliente B2C end-to-end: dalla scoperta all\u2019acquisto al post-vendita.",
+        tasks: [
+          "Vendite online e gestione ordini WooCommerce: inserimento Notion, passaggio a Debora, Valentina per DDT/corriere, invio tracking, chiusura",
+          "Shopping experience Bottega: appuntamenti Calendly, accoglienza, tour, personalizzazione, chiusura, follow-up entro 24h, note post-visita",
+          "Press operations: gestione autonoma press@benedettabruzziches.com, preparazione campioni, spedizione con tracking, rientri, solleciti, catalogo press dinamico su Notion, rubrica contatti stampa",
+          "Riparazioni: repair@benedettabruzziches.com, valutazione garanzia/pagamento, preventivo, passaggio a Giulio, tracking, rientro al cliente",
+          "Resi B2C e magazzino sito e-commerce",
+          "WhatsApp/SMS marketing e community mobile",
+          "Clienteling: lista VIP, early access, inviti, cura rapporto personale"
+        ]
+      },
     ],
     crossLinks: [
       { person: "Fabio", to: "Roberta", toDept: "comunicazione", type: "Intersezione", why: "ADV (budget vs contenuti), Newsletter (Klaviyo vs copy), Sito (tech vs content). Ownership separate, allineamento operativo. Escalation a Benedetta in caso di disaccordo" },
@@ -101,9 +157,43 @@ const PEOPLE = {
   admin: {
     summary: "Gestisce la parte finanziaria, contabile, gli acquisti, il canale wholesale B2B e la logistica campioni press. Simona coordina Alice e Valentina nell\u2019operativit\u00E0 quotidiana.",
     hierarchy: [
-      { name: "Simona Gigliotti", role: "Resp. Amministrativo & Wholesale", level: 0, desc: "Responsabile area amministrativa e canale wholesale B2B. Supervisione contabilit\u00E0 generale, prima nota, scadenzario, fatturazione attiva e passiva, adempimenti fiscali e tributari. Interfaccia commercialista e consulenti finanziari. Wholesale B2B: ordini, conferme d\u2019ordine, spedizioni B2B, pagamenti, solleciti, recupero crediti. Rapporti agente Bonini. Gestione rapporti bancari, fidi, anticipi fatture, pagamenti fornitori, cash flow operativo. Coordinamento logistico spedizioni campioni press su richiesta di Caterina. Coordina Alice e Valentina nell\u2019operativit\u00E0 quotidiana. Backup: Alice (admin) + Giulio/Agostino (urgenze B2B)" },
-      { name: "Alice", role: "Ufficio Acquisti", level: 0, badge: "Backup admin", desc: "Gestisce l\u2019intero ciclo acquisti: dalla ricezione delle RdA elaborate da Giulio fino a entrata in magazzino. Gestione fornitori: rapporti, negoziazione prezzi e condizioni, valutazione performance, ricerca nuovi fornitori. Approvvigionamento: ricezione RdA da Giulio, inserimento in Team System, gestione ordini, monitoraggio tempi di consegna. Analisi dati acquisti, controllo budget materiali, reportistica per Direzione. Backup operativo amministrativo per Simona: supporto su contabilit\u00E0 e pratiche amministrative (attivo strutturalmente, non solo in emergenza)" },
-      { name: "Valentina", role: "Segreteria Amministrativa & Logistica", level: 1, reportsTo: "Simona", note: "Part-time 09\u201313", desc: "Profilo operativo e trasversale che tocca e-commerce, press, Bottega e Coriolo. DDT e spedizioni B2C: gestione DDT in uscita, prenotazioni corriere, pratiche spedizione. Recupero crediti su clienti italiani. Chiamate corsi pelletteria. Gestione magazzino e-commerce: stock fisico prodotti per il sito, monitoraggio disponibilit\u00E0, aggiornamento stock, segnalazione esaurimenti a Caterina e Fabio. Gestione spedizioni e rientri campioni press (su coordinamento Simona), monitoraggio e comunicazione stato rientri a Caterina. Supporto amministrativo BB Comba (Coriolo). Allestimento e merchandising Bottega. Conferma appuntamenti Bottega il giorno prima via WhatsApp personalizzato per Caterina (in sua assenza pomeridiana: Caterina conferma)" },
+      { name: "Simona Gigliotti", role: "Resp. Amministrativo & Wholesale", level: 0,
+        mission: "Responsabile area amministrativa e canale wholesale B2B. Coordina Alice e Valentina nell\u2019operativit\u00E0 quotidiana.",
+        tasks: [
+          "Supervisione contabilit\u00E0 generale: prima nota, scadenzario, fatturazione attiva e passiva",
+          "Adempimenti fiscali e tributari, interfaccia commercialista",
+          "Wholesale B2B: ordini, conferme d\u2019ordine, spedizioni, pagamenti, solleciti, recupero crediti",
+          "Rapporti con agente Bonini",
+          "Servizi finanziari: rapporti bancari, fidi, anticipi fatture, cash flow operativo",
+          "Coordinamento logistico spedizioni campioni press (su richiesta di Caterina)",
+          "Backup: Alice (admin) + Giulio/Agostino (urgenze B2B)"
+        ]
+      },
+      { name: "Alice", role: "Ufficio Acquisti", level: 0, badge: "Backup admin",
+        mission: "Gestisce l\u2019intero ciclo acquisti: dalla ricezione delle RdA elaborate da Giulio fino a entrata in magazzino. Backup operativo amministrativo strutturale per Simona.",
+        tasks: [
+          "Gestione fornitori: rapporti, negoziazione prezzi e condizioni, valutazione performance",
+          "Ricerca nuovi fornitori",
+          "Approvvigionamento: ricezione RdA da Giulio, inserimento in Team System, gestione ordini",
+          "Monitoraggio tempi di consegna fino a entrata magazzino",
+          "Analisi dati acquisti, controllo budget materiali, reportistica per Direzione",
+          "Backup operativo contabilit\u00E0 e pratiche amministrative per Simona"
+        ]
+      },
+      { name: "Valentina", role: "Segreteria Amministrativa & Logistica", level: 1, reportsTo: "Simona", note: "Part-time 09\u201313",
+        mission: "Profilo operativo e trasversale che tocca e-commerce, press, Bottega e Coriolo.",
+        tasks: [
+          "DDT e spedizioni B2C: gestione DDT in uscita, prenotazioni corriere, pratiche spedizione",
+          "Recupero crediti su clienti italiani",
+          "Chiamate e coordinamento corsi pelletteria",
+          "Gestione magazzino e-commerce: stock fisico sito, monitoraggio disponibilit\u00E0, segnalazione esaurimenti a Caterina e Fabio",
+          "Gestione spedizioni e rientri campioni press (su coordinamento Simona)",
+          "Monitoraggio e comunicazione stato rientri campioni a Caterina",
+          "Supporto amministrativo BB Comba (Coriolo)",
+          "Allestimento e merchandising Bottega",
+          "Conferma appuntamenti Bottega il giorno prima via WhatsApp personalizzato (in sua assenza pm: Caterina)"
+        ]
+      },
     ],
     crossLinks: [
       { person: "Alice", to: "Giulio", toDept: "produzione", type: "Ponte operativo", why: "Giulio elabora fabbisogni e RdA, Alice le inserisce in Team System e gestisce fino a entrata magazzino" },
@@ -115,12 +205,75 @@ const PEOPLE = {
   produzione: {
     summary: "Il cuore produttivo e operativo dell\u2019azienda: dalla programmazione della produzione al prodotto finito, inclusi qualit\u00E0, gestione sarte, spedizioni, NCR, Bottega e processi aziendali trasversali (HR, avvocato, bandi).",
     hierarchy: [
-      { name: "Giulio", role: "Resp. Produzione & Operations", level: 0, desc: "Responsabile di tutta l\u2019area produttiva e operativa: dalla programmazione alla produzione al prodotto finito. Programmazione produzione: pianificazione per collezione e stagione, tempi, priorit\u00E0, assegnazione risorse interne ed esterne. Gestione team: coordinamento Debora, Ada, Federico, Laura N., Laura P., priorit\u00E0 quotidiane, risoluzione problemi. Monitoraggio qualit\u00E0, tempi e performance fornitori produttivi. Elaborazione fabbisogni e RdA per Alice (Acquisti). NCR e resi B2B: comunicazione clienti, coordinamento interno, file NCR condivisi. Aggiornamento indicatori qualit\u00E0 produzione. Filtro HR: interfaccia consulente del lavoro. Strutturazione aziendale: interfaccia avvocato, gestione bandi. Backup urgenze B2B in assenza di Simona (non parte admin). Supervisione produzione Bottega con Laura Nocera e Federico" },
-      { name: "Debora Antonini", role: "Resp. Controllo Qualit\u00E0 & Spedizioni Uscita", level: 0, desc: "Responsabile QC finale e spedizioni in uscita. Garantisce che ogni prodotto che lascia l\u2019azienda rispetti gli standard del brand. Controllo qualit\u00E0 finale: rilevamento difetti, verifica standard, segnalazione criticit\u00E0 a Giulio. Packaging e spedizioni uscita: preparazione fisica pacchi B2C (su ordine di Caterina), B2B (su indicazione Simona) e campioni press (su coordinamento Simona/Caterina). Gestione magazzino prodotto finito: inventario, organizzazione, movimentazione. NCR: invio mail NCR ai fornitori, compilazione file NCR interne, tracking risoluzioni. Laura Pontuale la supporta su conformit\u00E0 e preparazione prodotti" },
-      { name: "Ada", role: "Gestione Sarte & Lavorazioni Manuali", level: 0, note: "Ruolo autonomo", desc: "Gestisce in autonomia la filiera di cucitura e il coordinamento con le sarte esterne. Rapporto diretto con sarte: assegnazione lavori, tempi, qualit\u00E0, ritiri e consegne. Gestione autonoma dell\u2019intero processo di cucitura: dall\u2019assegnazione al prodotto finito. Preparazione kit per modello e variante, pianificazione di comune accordo con Giulio. Partecipazione attiva allo sviluppo campionario: cucitura prototipi, test lavorazioni. Laura Pontuale la supporta come interfaccia kit sarte e riparazione difetti cucitura" },
-      { name: "Federico Costantini", role: "Addetto alla Produzione", level: 1, reportsTo: "Giulio", desc: "Addetto alla produzione con focus su taglio, lavorazione e assemblaggio. Ricezione e smistamento materie prime. Taglio materiali secondo schede tecniche e specifiche. Lavorazione componenti e assemblaggio prodotto. Verifica funzionamento meccanismi e chiusure. Completamento prodotto finito fino al passaggio a QC (Debora). Priorit\u00E0 ricevute esclusivamente da Giulio. Periodi di minor carico (~aprile, fine settembre): manutenzione magazzino, ordine laboratorio, produzione modelli Bottega/Coriolo" },
-      { name: "Laura Nocera", role: "Laboratorio & Ricezione Spedizioni", level: 1, reportsTo: "Giulio", desc: "Lavora in laboratorio sulle lavorazioni assegnate da Giulio. Analisi materie prime: qualit\u00E0 e conformit\u00E0. Gestione spedizioni in entrata: ricezione pacchi, verifica integrit\u00E0, consegna DDT ad Alice per registrazione. Supporto organizzazione e inventario magazzino materie prime. Non gestisce spedizioni in uscita (responsabilit\u00E0 di Debora/Valentina). Lavorazioni accessori (clip, ecc.) nei momenti di minor carico. Supporto operativo produzione Bottega sotto supervisione Giulio" },
-      { name: "Laura Pontuale", role: "Supporto Gestione Sarte & QC", level: 1, reportsTo: "Debora + Ada", desc: "Figura di supporto trasversale nella Produzione: lavora sia con Debora (QC) sia con Ada (sarte). Controllo conformit\u00E0 in entrata prodotti dalle sarte esterne. Interfaccia per kit sarte con Ada: preparazione e verifica kit. Riparazione difetti di cucitura e finiture. Pulizia, preparazione e finitura prodotti per passaggio a QC (Debora). Supporto operativo spedizioni quando necessario. Supporto Stile in fase campionario. Ripristino resi: gestisce file resi (registra arrivo, tipo difetto, data riparazione), ripara e comunica completamento a Giulio. Regola: minimo 1h/giorno dedicata alla riparazione resi \u2014 B2C per tempestivit\u00E0, B2B entro ~35 giorni" },
+      { name: "Giulio", role: "Resp. Produzione & Operations", level: 0,
+        mission: "Responsabile di tutta l\u2019area produttiva e operativa: dalla programmazione alla produzione al prodotto finito.",
+        tasks: [
+          "Programmazione produzione: pianificazione per collezione e stagione, tempi, priorit\u00E0, assegnazione risorse",
+          "Gestione team: coordinamento Debora, Ada, Federico, Laura N., Laura P., priorit\u00E0 quotidiane",
+          "Monitoraggio qualit\u00E0, tempi e performance fornitori produttivi",
+          "Elaborazione fabbisogni e RdA per Alice (Acquisti)",
+          "NCR e resi B2B: comunicazione clienti, coordinamento interno, file condivisi",
+          "Aggiornamento indicatori qualit\u00E0 produzione",
+          "Filtro HR: interfaccia consulente del lavoro",
+          "Strutturazione aziendale: interfaccia avvocato, gestione bandi",
+          "Backup urgenze B2B in assenza di Simona (non parte admin)",
+          "Supervisione produzione Bottega con Laura Nocera e Federico"
+        ]
+      },
+      { name: "Debora Antonini", role: "Resp. Controllo Qualit\u00E0 & Spedizioni Uscita", level: 0,
+        mission: "Garantisce che ogni prodotto che lascia l\u2019azienda rispetti gli standard del brand.",
+        tasks: [
+          "Controllo qualit\u00E0 finale: rilevamento difetti, verifica standard, segnalazione criticit\u00E0 a Giulio",
+          "Packaging e preparazione fisica pacchi B2C (su ordine Caterina), B2B (su indicazione Simona), campioni press (su coordinamento Simona/Caterina)",
+          "Gestione magazzino prodotto finito: inventario, organizzazione, movimentazione",
+          "NCR: invio mail NCR ai fornitori, compilazione file interne, tracking risoluzioni"
+        ]
+      },
+      { name: "Ada", role: "Gestione Sarte & Lavorazioni Manuali", level: 0, note: "Ruolo autonomo",
+        mission: "Gestisce in autonomia la filiera di cucitura e il coordinamento con le sarte esterne. Si coordina con Giulio.",
+        tasks: [
+          "Rapporto diretto con sarte esterne: assegnazione lavori, tempi, qualit\u00E0, ritiri e consegne",
+          "Gestione autonoma intero processo di cucitura: dall\u2019assegnazione al prodotto finito",
+          "Preparazione kit per modello e variante (pianificazione con Giulio)",
+          "Sviluppo campionario: cucitura prototipi, test lavorazioni",
+          "Laura Pontuale supporta come interfaccia kit sarte e riparazione difetti"
+        ]
+      },
+      { name: "Federico Costantini", role: "Addetto alla Produzione", level: 1, reportsTo: "Giulio",
+        mission: "Addetto alla produzione con focus su taglio, lavorazione e assemblaggio. Priorit\u00E0 ricevute esclusivamente da Giulio.",
+        tasks: [
+          "Ricezione e smistamento materie prime",
+          "Taglio materiali secondo schede tecniche e specifiche",
+          "Lavorazione componenti e assemblaggio prodotto",
+          "Verifica funzionamento meccanismi e chiusure",
+          "Completamento prodotto finito fino a passaggio QC (Debora)",
+          "Periodi basso carico (~aprile, fine settembre): manutenzione magazzino, ordine laboratorio, produzione Bottega/Coriolo"
+        ]
+      },
+      { name: "Laura Nocera", role: "Laboratorio & Ricezione Spedizioni", level: 1, reportsTo: "Giulio",
+        mission: "Lavora in laboratorio, analizza materie prime, gestisce spedizioni in entrata. Non gestisce spedizioni in uscita.",
+        tasks: [
+          "Lavorazioni manuali in laboratorio assegnate da Giulio",
+          "Analisi qualit\u00E0 e conformit\u00E0 materie prime in arrivo",
+          "Ricezione pacchi in entrata: verifica integrit\u00E0, consegna DDT ad Alice",
+          "Supporto organizzazione e inventario magazzino materie prime",
+          "Lavorazioni accessori (clip, ecc.) nei momenti di minor carico",
+          "Supporto operativo produzione Bottega sotto supervisione Giulio"
+        ]
+      },
+      { name: "Laura Pontuale", role: "Supporto Gestione Sarte & QC", level: 1, reportsTo: "Debora + Ada",
+        mission: "Figura di supporto trasversale: lavora sia con Debora (QC) sia con Ada (sarte). Regola: minimo 1h/giorno dedicata alla riparazione resi.",
+        tasks: [
+          "Controllo conformit\u00E0 prodotti in entrata dalle sarte esterne",
+          "Preparazione e verifica kit in coordinamento con Ada",
+          "Riparazione difetti di cucitura e finiture",
+          "Pulizia, preparazione e finitura prodotti per passaggio a QC (Debora)",
+          "Supporto operativo spedizioni quando necessario",
+          "Supporto Stile in fase campionario",
+          "Ripristino resi: file resi (arrivo, tipo difetto, data riparazione), riparazione, comunicazione completamento a Giulio",
+          "Tempistiche resi: B2C tempestivo, B2B entro ~35 giorni"
+        ]
+      },
     ],
     crossLinks: [
       { person: "Debora", to: "Simona", toDept: "admin", type: "Ponte operativo", why: "Coordinamento per la gestione ordini B2B, spedizioni clienti wholesale e magazzino prodotto finito" },
@@ -130,10 +283,9 @@ const PEOPLE = {
     ],
     notes: [
       "Agostino interviene direttamente in laboratorio per risolvere problemi operativi",
-      "Resi B2C e B2B: file condivisi separati. Laura Pontuale: minimo 1h/giorno dedicata a riparazioni resi \u2014 per B2C \u00E8 fattore strategico, per B2B entro ~35 giorni",
-      "Magazzino: Stile ha magazzino separato (campioni inclusi). Magazzino Produzione sotto supervisione Giulio con supporto Laura N. e Federico",
-      "Federico: nei periodi di minor carico (~aprile, fine settembre) supporta manutenzione magazzino, ordine laboratorio, produzione Bottega/Coriolo",
-      "Bottega/Store: area operativa separata dallo Stile. Produzione Bottega sotto Giulio con Laura Nocera e Federico",
+      "Resi B2C e B2B: file condivisi separati. Laura Pontuale: minimo 1h/giorno dedicata a riparazioni resi",
+      "Magazzino Stile (campioni inclusi, Elisa) separato da Magazzino Produzione (Giulio) e Magazzino e-commerce (Valentina)",
+      "Bottega/Store: area operativa separata. Produzione Bottega sotto Giulio con Laura Nocera e Federico"
     ],
   },
 };
@@ -193,8 +345,41 @@ function MacroChart({ selectedDept, onSelect }) {
   return h("svg", { viewBox: "0 0 "+W+" 340", style: { width: "100%", maxWidth: W, display: "block", margin: "0 auto" } }, ...c);
 }
 
+function PersonCard({ person, dept, isExpanded, onToggle }) {
+  const d = DEPTS[dept];
+  const header = h("div", { onClick: onToggle, style: { display: "flex", alignItems: "flex-start", gap: 12, padding: "12px 0", cursor: "pointer", marginLeft: person.level*28 } },
+    h("div", { style: { width: 26, height: 26, borderRadius: 13, flexShrink: 0, background: person.level===0 ? d.color : d.light, border: person.level===0 ? "none" : "1.5px solid "+d.color+"30", color: person.level===0 ? "#FFF" : d.color, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10, fontWeight: 600, fontFamily: font } }, person.name.charAt(0)),
+    h("div", { style: { flex: 1 } },
+      h("div", { style: { display: "flex", alignItems: "center", gap: 6, flexWrap: "wrap" } },
+        h("span", { style: { fontSize: 14, fontWeight: 600, fontFamily: font } }, person.name),
+        person.badge ? h("span", { style: { fontSize: 7.5, textTransform: "uppercase", color: "#B07030", background: "#B0703010", padding: "2px 8px", fontWeight: 600, fontFamily: font, borderRadius: 3 } }, person.badge) : null,
+        person.note ? h("span", { style: { fontSize: 7.5, color: "#5080A0", background: "#5080A008", padding: "2px 8px", fontFamily: font, borderRadius: 3 } }, person.note) : null
+      ),
+      h("div", { style: { fontSize: 10, color: d.color, fontFamily: font, marginTop: 2 } }, person.role),
+      person.reportsTo ? h("div", { style: { fontSize: 9, color: "#A09888", fontFamily: font, marginTop: 2 } }, "\u2192 Riporta a ", h("strong", null, person.reportsTo)) : null
+    ),
+    h("span", { style: { fontSize: 9, color: d.color, opacity: 0.5, fontFamily: font, flexShrink: 0, marginTop: 4 } }, isExpanded ? "\u25B2" : "\u25BC")
+  );
+  if (!isExpanded) return header;
+  const detail = h("div", { style: { marginLeft: person.level*28 + 38, marginBottom: 14, padding: "12px 16px", background: d.light+"60", border: "1px solid "+d.color+"0C", borderRadius: 6 } },
+    person.mission ? h("div", { style: { fontSize: 11, color: "#4A4840", fontFamily: font, lineHeight: 1.65, marginBottom: 10, fontStyle: "italic" } }, person.mission) : null,
+    person.tasks ? h("div", null,
+      h("div", { style: { fontSize: 8.5, letterSpacing: "0.12em", textTransform: "uppercase", color: "#A09888", marginBottom: 6, fontWeight: 500, fontFamily: font } }, "Responsabilit\u00E0"),
+      ...person.tasks.map((t, i) =>
+        h("div", { key: i, style: { display: "flex", gap: 8, marginBottom: 4, fontSize: 10.5, color: "#4A4840", fontFamily: font, lineHeight: 1.55 } },
+          h("span", { style: { color: d.color, flexShrink: 0, marginTop: 1 } }, "\u2022"),
+          h("span", null, t)
+        )
+      )
+    ) : null
+  );
+  return h("div", { key: person.name }, header, detail);
+}
+
 function DeptDetail({ deptId, onClose }) {
-  const dept = DEPTS[deptId], data = PEOPLE[deptId], s = [];
+  const dept = DEPTS[deptId], data = PEOPLE[deptId];
+  const [expandedPerson, setExpandedPerson] = useState(null);
+  const s = [];
   s.push(h("div", { key: "hd", style: { padding: "18px 24px", background: "linear-gradient(145deg, "+dept.light+"80, #FFF)", borderBottom: "1px solid "+dept.color+"0C", display: "flex", alignItems: "center", gap: 14 } },
     h("div", { style: { width: 44, height: 44, borderRadius: 10, background: dept.color, display: "flex", alignItems: "center", justifyContent: "center", color: "#FFF", fontSize: 18, fontWeight: 300, fontFamily: font } }, data.hierarchy.length),
     h("div", { style: { flex: 1 } },
@@ -205,20 +390,10 @@ function DeptDetail({ deptId, onClose }) {
     h("button", { onClick: onClose, style: { background: "none", border: "1px solid "+dept.color+"25", padding: "5px 14px", fontSize: 10, color: dept.color, cursor: "pointer", fontFamily: font, borderRadius: 5, alignSelf: "flex-start" } }, "\u2715 Chiudi")
   ));
   s.push(h("div", { key: "pp", style: { padding: "16px 24px 8px" } },
-    h("div", { style: { fontSize: 8.5, letterSpacing: "0.16em", textTransform: "uppercase", color: "#A09888", marginBottom: 12, fontWeight: 500, fontFamily: font } }, "Chi lavora qui"),
+    h("div", { style: { fontSize: 8.5, letterSpacing: "0.16em", textTransform: "uppercase", color: "#A09888", marginBottom: 12, fontWeight: 500, fontFamily: font } }, "Chi lavora qui \u2014 clicca per Job Description"),
     ...data.hierarchy.map((p, i) =>
-      h("div", { key: i, style: { display: "flex", alignItems: "flex-start", gap: 12, padding: "12px 0", borderBottom: i < data.hierarchy.length-1 ? "1px solid #F2EEEA" : "none", marginLeft: p.level*28 } },
-        h("div", { style: { width: 26, height: 26, borderRadius: 13, flexShrink: 0, background: p.level===0 ? dept.color : dept.light, border: p.level===0 ? "none" : "1.5px solid "+dept.color+"30", color: p.level===0 ? "#FFF" : dept.color, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10, fontWeight: 600, fontFamily: font } }, p.name.charAt(0)),
-        h("div", { style: { flex: 1 } },
-          h("div", { style: { display: "flex", alignItems: "center", gap: 6, flexWrap: "wrap" } },
-            h("span", { style: { fontSize: 14, fontWeight: 600, fontFamily: font } }, p.name),
-            p.badge ? h("span", { style: { fontSize: 7.5, textTransform: "uppercase", color: "#B07030", background: "#B0703010", padding: "2px 8px", fontWeight: 600, fontFamily: font, borderRadius: 3 } }, p.badge) : null,
-            p.note ? h("span", { style: { fontSize: 7.5, color: "#5080A0", background: "#5080A008", padding: "2px 8px", fontFamily: font, borderRadius: 3 } }, p.note) : null
-          ),
-          h("div", { style: { fontSize: 10, color: dept.color, fontFamily: font, marginTop: 2 } }, p.role),
-          p.reportsTo ? h("div", { style: { fontSize: 9, color: "#A09888", fontFamily: font, marginTop: 2 } }, "\u2192 Riporta a ", h("strong", null, p.reportsTo)) : null,
-          h("div", { style: { fontSize: 11, color: "#4A4840", fontFamily: font, marginTop: 5, lineHeight: 1.65 } }, p.desc)
-        )
+      h("div", { key: i, style: { borderBottom: i < data.hierarchy.length-1 ? "1px solid #F2EEEA" : "none" } },
+        h(PersonCard, { person: p, dept: deptId, isExpanded: expandedPerson === i, onToggle: () => setExpandedPerson(expandedPerson === i ? null : i) })
       )
     )
   ));
@@ -272,14 +447,6 @@ function DeptDetail({ deptId, onClose }) {
       )
     ));
   }
-  if (data.notInScope) {
-    s.push(h("div", { key: "nis", style: { padding: "4px 24px 16px" } },
-      h("div", { style: { fontSize: 8.5, letterSpacing: "0.16em", textTransform: "uppercase", color: "#A09888", marginBottom: 10, fontWeight: 500, fontFamily: font, paddingTop: 14, borderTop: "1px solid #F0ECE4" } }, "Non in perimetro"),
-      ...data.notInScope.map((item, i) =>
-        h("div", { key: i, style: { padding: "8px 14px", background: "#F8F7F4", borderLeft: "3px solid #D0C8B8", borderRadius: 3, fontSize: 10.5, color: "#6A6858", lineHeight: 1.6, fontFamily: font, marginBottom: 4 } }, item)
-      )
-    ));
-  }
   if (data.openItems && data.openItems.length > 0) {
     s.push(h("div", { key: "oi", style: { padding: "4px 24px 16px" } },
       ...data.openItems.map((item, i) =>
@@ -303,14 +470,14 @@ function Organigramma() {
     h("header", { style: { textAlign: "center", padding: "36px 20px 14px" } },
       h("div", { style: { fontSize: 10, letterSpacing: "0.45em", textTransform: "uppercase", color: "#A09888" } }, "Organigramma"),
       h("h1", { style: { fontSize: 30, fontWeight: 300, letterSpacing: "0.1em", margin: "4px 0" } }, "Benedetta Bruzziches"),
-      h("div", { style: { fontSize: 10, letterSpacing: "0.22em", color: "#B0A898", textTransform: "uppercase" } }, "Febbraio 2026 \u00B7 Rev 7"),
+      h("div", { style: { fontSize: 10, letterSpacing: "0.22em", color: "#B0A898", textTransform: "uppercase" } }, "Febbraio 2026 \u00B7 Rev 8"),
       h("div", { style: { display: "flex", justifyContent: "center", gap: 14, marginTop: 12, flexWrap: "wrap" } },
         ...["16 persone interne", "6 collaboratori esterni", "6 aree operative"].map((t, i) =>
           h("span", { key: i, style: { fontSize: 10, color: "#7A7868", background: "#EFEDE8", padding: "4px 12px", borderRadius: 3 } }, t)
         )
       ),
       h("div", { style: { marginTop: 14, fontSize: 11, color: "#8A8878", lineHeight: 1.7, maxWidth: 600, margin: "14px auto 0" } },
-        h("strong", null, "Linee continue"), " = gerarchia. ", h("strong", null, "Archi tratteggiati"), " = collaborazioni operative tra reparti. ", h("br"), "Clicca su un reparto per esplorare chi ci lavora e le connessioni."
+        h("strong", null, "Linee continue"), " = gerarchia. ", h("strong", null, "Archi tratteggiati"), " = collaborazioni operative tra reparti. ", h("br"), "Clicca su un reparto per il team, poi su ogni persona per la Job Description completa."
       )
     ),
     h("div", { style: { padding: "0 12px" } }, h(MacroChart, { selectedDept: sel, onSelect: setSel })),
@@ -322,7 +489,7 @@ function Organigramma() {
         )
       )
     ),
-    h("div", { style: { textAlign: "center", padding: "6px 0 32px", fontSize: 8.5, letterSpacing: "0.18em", color: "#C8C0B0", textTransform: "uppercase" } }, "\u00A9 Benedetta Bruzziches \u00B7 Documento interno \u00B7 Rev 7 \u00B7 26 febbraio 2026")
+    h("div", { style: { textAlign: "center", padding: "6px 0 32px", fontSize: 8.5, letterSpacing: "0.18em", color: "#C8C0B0", textTransform: "uppercase" } }, "\u00A9 Benedetta Bruzziches \u00B7 Documento interno \u00B7 Rev 8 \u00B7 26 febbraio 2026")
   );
 }
 
