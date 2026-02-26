@@ -39,24 +39,23 @@ const PEOPLE = {
   stile: {
     summary: "Cuore creativo del brand. Sviluppa l\u2019identit\u00E0 estetica di ogni collezione: modelli, materiali, colori, accessori metallici.",
     hierarchy: [
-      { name: "Claudia", role: "Creative Lead", level: 0, desc: "Guida creativa quotidiana: ricerca, concept, sviluppo estetico modelli, materiali, colori, proporzioni. Supervisione diretta di Domitilla per la parte accessori metallici" },
+      { name: "Claudia", role: "Creative Lead", level: 0, desc: "Guida creativa quotidiana: ricerca, concept, sviluppo estetico modelli, materiali, colori, proporzioni. Supervisione diretta di Domitilla per la parte accessori metallici (chiusure, ferramenti, componenti metalliche)" },
       { name: "Elisa", role: "Operations & Production Coord.", level: 0, badge: "Doppio ruolo",
-        desc: "Coordina fornitori, schede tecniche, gestisce campionari e timing, magazzino materiali e campioni, catalogazione materiali e aggiornamento database Notion. Supporto diretto a Benedetta su task operative nei momenti di minor carico. Segreteria operativa per Comunicazione" },
+        desc: "Coordina fornitori, schede tecniche, gestisce campionari e timing, magazzino materiali e campioni, catalogazione materiali e aggiornamento database Notion. Supporto diretto a Benedetta su task operative nei momenti di minor carico. Segreteria operativa per Comunicazione: organizza shooting, gestisce logistica dei fornitori creativi" },
     ],
     externals: [
-      { name: "Domitilla", what: "Design accessori metallici, progettazione chiusure, ricerca e coordinamento fornitori accessori. Riporta a Claudia + Benedetta" },
+      { name: "Domitilla", what: "Design e progettazione accessori metallici (chiusure, ferramenti), ricerca materiali e fornitori accessori, coordinamento con fornitori per prototipi e sviluppo. Riporta a Claudia + Benedetta" },
     ],
     crossLinks: [
       { person: "Elisa", to: "Giulio", toDept: "produzione", type: "Ponte operativo", why: "Coordina il passaggio di schede tecniche e prototipi dallo Stile alla Produzione per il campionario" },
-      { person: "Elisa", to: "Roberta", toDept: "comunicazione", type: "Doppio riporto", why: "Segreteria operativa: organizza shooting, gestisce logistica dei fornitori creativi" },
-      { person: "Domitilla", to: "Giulio", toDept: "produzione", type: "Ponte tecnico", why: "Coordinamento con la produzione per la realizzazione e verifica prototipi degli accessori metallici" },
+      { person: "Elisa", to: "Roberta", toDept: "comunicazione", type: "Doppio riporto", why: "Segreteria operativa: organizza shooting, gestisce logistica dei fornitori creativi. In caso di conflitto Stile/Comunicazione, si confronta con Benedetta" },
     ],
   },
   comunicazione: {
-    summary: "Custode della voce del brand. Governa tutto ci\u00F2 che il brand dice, mostra e comunica.",
+    summary: "Custode della voce del brand. Governa tutto ci\u00F2 che il brand dice, mostra e comunica al mondo: contenuti, immagini, tono, relazioni con la stampa, piano editoriale, identit\u00E0 visiva. La direzione strategica viene da Benedetta; Roberta la traduce in esecuzione su tutti i canali.",
     hierarchy: [
-      { name: "Roberta", role: "Communication Manager \u2014 Regia Editoriale & PR Strategy", level: 0, desc: "Piano editoriale, regia contenuti su tutti i canali, PR strategy, governance editoriale sito, contenuti ADV e newsletter, coordinamento creativi esterni, shooting, collaborazioni influencer" },
-      { name: "Marianna", role: "Social Media Operations", level: 1, reportsTo: "Roberta", desc: "Scheduling, publishing, community management, coordinamento content contributors, gestione asset library" },
+      { name: "Roberta", role: "Communication Manager \u2014 Regia Editoriale & PR Strategy", level: 0, desc: "Piano editoriale su tutti i canali (temi, formati, frequenza). Regia contenuti e approvazione pre-pubblicazione. PR strategy, relazioni stampa, coordinamento ufficio stampa Milano, rassegna stampa, inviti, press day, seeding. Direzione collaborazioni influencer e talent (selezione, negoziazione, brief, calendario). Regia shooting fotografici e video con creativi esterni. Produzione contenuti creativi per ADV e newsletter (visual, copy, format). Governance editoriale del sito (pagine, copy, immagini, coerenza brand). Custode operativa del tono di voce del brand" },
+      { name: "Marianna", role: "Social Media Operations", level: 1, reportsTo: "Roberta", desc: "Scheduling, publishing, community management (IG, DM, commenti), coordinamento content contributors (HOON dalla Bottega), gestione asset library. Opera sotto regia di Roberta. Pubblica in autonomia tutto ci\u00F2 che \u00E8 nel calendario approvato. Roberta interviene solo su contenuti sensibili o fuori piano" },
     ],
     externals: [
       { name: "Ornella", what: "Fotografia professionale" },
@@ -67,36 +66,44 @@ const PEOPLE = {
     ],
     crossLinks: [],
     intersections: [
-      { area: "ADV", comms: "Contenuti creativi: visual, copy, format", digital: "Budget, targeting, piattaforme, performance, refresh" },
-      { area: "Newsletter", comms: "Contenuti: testi, tono, layout editoriale", digital: "Klaviyo: automazioni, segmenti, deliverability, tech" },
-      { area: "Sito", comms: "Content owner: pagine, copy, immagini, brand", digital: "Tech owner: backlog, release, performance, hosting" },
+      { area: "ADV", comms: "Produce contenuti creativi: visual, copy, format. Propone concept alla Direzione", digital: "Governa budget, targeting, piattaforme, performance, refresh. Porta dati alla Direzione" },
+      { area: "Newsletter", comms: "Produce contenuti: testi, tono, layout editoriale. Propone piano newsletter alla Direzione", digital: "Governa Klaviyo: automazioni, segmenti, deliverability, tech. Porta dati aperture e conversioni" },
+      { area: "Sito", comms: "Content owner: pagine editoriali, copy, immagini, coerenza brand. Governance editoriale", digital: "Tech owner: backlog, release, performance, hosting, connettore. Governance tecnica" },
+    ],
+    notInScope: [
+      "Infrastruttura tecnica del sito (backlog, release, hosting, performance) \u2192 Digital Lead (Fabio)",
+      "Piattaforma CRM / Klaviyo (configurazione, automazioni, deliverability, segmenti) \u2192 Digital Lead (Fabio)",
+      "Budget e performance campagne ADV (targeting, ROAS, ottimizzazione, piattaforme) \u2192 Digital Lead (Fabio)",
+      "Relazione cliente B2C (vendite, resi, riparazioni, community, WhatsApp) \u2192 E-commerce Manager (Caterina)",
+      "Gestione richieste press e campioni (ricezione, spedizione, tracking, rientri) \u2192 E-commerce Manager (Caterina)",
     ],
     openItems: [
-      "Audit influencer e collaborazioni da parte di Roberta",
+      "Audit influencer e collaborazioni da parte di Roberta: definire processo, budget, criteri di selezione e calendario",
       "Ridefinizione strategica piano editoriale Instagram brand",
       "Definire output e scadenze chiare: giorno del mese per consegna ADV, comunicato stampa, ecc.",
     ],
   },
   digital: {
-    summary: "Governa la presenza digitale del brand: e-commerce, CRM, sito web, dati, ADV e automazioni.",
+    summary: "Governa la presenza digitale del brand: e-commerce, CRM, sito web, dati, ADV e automazioni. Fabio e Caterina sono pari livello con ownership distinte: nessuno dei due coordina l\u2019altro. Fabio governa l\u2019infrastruttura e i canali digitali, Caterina governa la relazione con il cliente finale.",
     hierarchy: [
-      { name: "Fabio", role: "Digital Lead", level: 0, desc: "Responsabile unico infrastruttura digitale. Sito web (tech lead completo), connettore Notion/WooCommerce, migrazione CRM Mailchimp \u2192 Klaviyo, governance campagne ADV Meta e Google, blog SEO, admin tech Notion" },
-      { name: "Caterina Nobili", role: "E-commerce Manager & Owner B2C", level: 0, badge: "Owner cliente B2C", desc: "Owner relazione cliente B2C end-to-end. Caricamento prodotti sul sito e gestione estetica e-commerce. Shopping experience Bottega. Press operations. Resi B2C. Magazzino sito. Community e clienteling" },
+      { name: "Fabio", role: "Digital Lead", level: 0, desc: "Responsabile unico infrastruttura digitale. Sito web: tech lead completo (backlog, release, QA, performance, hosting, integrazioni). Connettore Notion/WooCommerce: sviluppo e manutenzione ponte dati tra database Notion e WooCommerce, mappatura campi 1:1, sincronizzazione, troubleshooting. Migrazione CRM Mailchimp \u2192 Klaviyo: setup, import contatti da 6 fonti, automazioni, segmenti, deliverability, integrazione sito e Notion. Governance campagne ADV Meta e Google: budget, targeting, ROAS, ottimizzazione, ciclo refresh strutturato. Blog SEO e CMS. Admin tech Notion: governance workspace, troubleshooting, supporto adozione strumenti digitali e Claude AI per il team. Coordina eventuali risorse esterne (sviluppatori, consulenti). Traduce la direzione strategica in progetti digitali con timeline, indicatori e risultati misurabili" },
+      { name: "Caterina Nobili", role: "E-commerce Manager & Owner B2C", level: 0, badge: "Owner cliente B2C", desc: "Owner relazione cliente B2C end-to-end: dalla scoperta all\u2019acquisto al post-vendita. Vendite online e gestione ordini WooCommerce (inserimento Notion, passaggio a Debora per pacco, Valentina per DDT/corriere, invio tracking, chiusura). Shopping experience Bottega: appuntamenti Calendly, accoglienza, tour, personalizzazione, chiusura, follow-up entro 24h, note post-visita. Press operations: gestione autonoma press@benedettabruzziches.com, preparazione campioni, spedizione con tracking, rientri, solleciti, catalogo press dinamico su Notion, rubrica contatti stampa. Riparazioni: repair@benedettabruzziches.com, valutazione garanzia/pagamento, preventivo, passaggio a Giulio, tracking, rientro al cliente. Resi B2C, magazzino sito e-commerce. WhatsApp/SMS marketing. Community mobile e clienteling: lista VIP, early access, inviti, cura rapporto personale" },
     ],
     crossLinks: [
-      { person: "Fabio", to: "Roberta", toDept: "comunicazione", type: "Intersezione", why: "ADV (budget vs contenuti), Newsletter (Klaviyo vs copy), Sito (tech vs content). Escalation a Benedetta in caso di disaccordo" },
-      { person: "Caterina", to: "Debora", toDept: "produzione", type: "Ponte operativo", why: "Preparazione e spedizione ordini B2C. Debora prepara pacchi, Valentina gestisce DDT e corriere" },
-      { person: "Caterina", to: "Roberta", toDept: "comunicazione", type: "Coordinamento", why: "Coerenza brand sui contenuti press. Caterina gestisce operativit\u00E0 press, Roberta strategia PR" },
-      { person: "Caterina", to: "Simona", toDept: "admin", type: "Flusso press", why: "Spedizioni campioni press: Caterina decide cosa mandare \u2192 Simona coordina \u2192 Debora spedisce" },
+      { person: "Fabio", to: "Roberta", toDept: "comunicazione", type: "Intersezione", why: "ADV (budget vs contenuti), Newsletter (Klaviyo vs copy), Sito (tech vs content). Ownership separate, allineamento operativo. Escalation a Benedetta in caso di disaccordo" },
+      { person: "Caterina", to: "Debora", toDept: "produzione", type: "Ponte operativo", why: "Preparazione e spedizione ordini B2C. Caterina passa ordini, Debora prepara pacchi fisici. Valentina gestisce DDT e corriere" },
+      { person: "Caterina", to: "Roberta", toDept: "comunicazione", type: "Coordinamento", why: "Coerenza brand sui contenuti press. Caterina gestisce operativit\u00E0 press (campioni, spedizioni, rientri), Roberta gestisce strategia PR e contenuti editoriali" },
+      { person: "Caterina", to: "Simona", toDept: "admin", type: "Flusso press", why: "DDT, corrieri, stock magazzino. Valentina gestisce DDT, prenotazioni corriere, pratiche spedizione. Simona supervisiona amministrazione" },
+      { person: "Caterina", to: "Giulio", toDept: "produzione", type: "Riparazioni", why: "Caterina riceve richiesta riparazione, valuta e passa a Giulio che assegna internamente. Caterina gestisce comunicazione con il cliente" },
     ],
-    openItems: ["\u26A0 PUNTO CRITICO: Caterina ha il carico pi\u00F9 alto dell\u2019organico. Serve una risorsa dedicata (stagista) per WhatsApp/SMS marketing e community management"],
+    openItems: ["\u26A0 PUNTO CRITICO: Caterina ha il carico pi\u00F9 alto dell\u2019organico. Serve una risorsa dedicata (stagista) per WhatsApp/SMS marketing e community management \u2014 attivit\u00E0 che oggi non vengono fatte ma genererebbero vendite"],
   },
   admin: {
     summary: "Gestisce la parte finanziaria, contabile, gli acquisti e il canale wholesale B2B.",
     hierarchy: [
-      { name: "Simona Gigliotti", role: "Resp. Amministrativo & Wholesale", level: 0, desc: "Supervisione amministrazione, contabilit\u00E0, servizi finanziari. Wholesale B2B, rapporti Bonini, pagamenti, solleciti, interfaccia commercialista" },
-      { name: "Alice", role: "Ufficio Acquisti", level: 0, badge: "Backup admin", desc: "Gestione fornitori, approvvigionamento, analisi dati acquisti, negoziazione, budget, ricerca nuovi fornitori. Elabora RdA ricevute da Giulio" },
-      { name: "Valentina", role: "Segreteria Amministrativa & Logistica", level: 1, reportsTo: "Simona", note: "Part-time 09\u201313", desc: "DDT, pratiche corriere e prenotazioni spedizioni B2C. Recupero crediti. Gestione magazzino e-commerce. Supporto amministrazione BB Comba (Coriolo)" },
+      { name: "Simona Gigliotti", role: "Resp. Amministrativo & Wholesale", level: 0, desc: "Supervisione amministrazione, contabilit\u00E0, servizi finanziari. Wholesale B2B, rapporti Bonini, pagamenti, solleciti, interfaccia commercialista. Backup: Alice (admin) + Giulio/Agostino (urgenze B2B)" },
+      { name: "Alice", role: "Ufficio Acquisti", level: 0, badge: "Backup admin", desc: "Gestione fornitori, approvvigionamento, analisi dati acquisti, negoziazione, budget, ricerca nuovi fornitori. Elabora RdA ricevute da Giulio, le inserisce in Team System e gestisce fino a entrata magazzino. Backup operativo per Simona su parte amministrativa" },
+      { name: "Valentina", role: "Segreteria Amministrativa & Logistica", level: 1, reportsTo: "Simona", note: "Part-time 09\u201313", desc: "DDT, pratiche corriere e prenotazioni spedizioni B2C. Recupero crediti (solo italiani). Chiamate corsi pelletteria. Gestione magazzino e-commerce. Gestione spedizioni e rientri campioni. Supporto amministrazione BB Comba (Coriolo). Allestimento e merchandising Bottega. Conferma appuntamenti Bottega il giorno prima via WhatsApp personalizzato" },
     ],
     crossLinks: [
       { person: "Alice", to: "Giulio", toDept: "produzione", type: "Ponte operativo", why: "Giulio elabora fabbisogni e RdA, Alice le inserisce in Team System e gestisce fino a entrata magazzino" },
@@ -104,14 +111,14 @@ const PEOPLE = {
     ],
   },
   produzione: {
-    summary: "Il cuore produttivo e operativo: dalla programmazione al prodotto finito, inclusi qualit\u00E0, sarte, spedizioni.",
+    summary: "Il cuore produttivo e operativo: dalla programmazione al prodotto finito, inclusi qualit\u00E0, sarte, spedizioni, Bottega e gestione processi aziendali.",
     hierarchy: [
-      { name: "Giulio", role: "Resp. Produzione & Operations", level: 0, desc: "Programmazione produzione, supervisione reparti produttivi, gestione risorse e obiettivi, monitoraggio fornitori esterni, flussi materiali, elaborazione RdA. NCR e resi B2B" },
-      { name: "Debora Antonini", role: "Resp. Controllo Qualit\u00E0 & Spedizioni Uscita", level: 0, desc: "Controllo finale prodotti, rilevamento difetti, packaging. Preparazione fisica pacchi e spedizioni in uscita (B2C + B2B). Magazzino prodotto finito" },
-      { name: "Ada", role: "Gestione Sarte & Lavorazioni Manuali", level: 0, note: "Ruolo autonomo", desc: "Si coordina direttamente con le sarte esterne. Gestisce in autonomia la filiera di cucitura. Pianificazione kit per modello/variante con Giulio" },
-      { name: "Federico Costantini", role: "Addetto alla Produzione", level: 1, reportsTo: "Giulio", desc: "Ricezione e smistamento materie prime, taglio materiali, lavorazione, assemblaggio, verifica meccanismi, completamento prodotto finito" },
-      { name: "Laura Nocera", role: "Laboratorio & Ricezione Spedizioni", level: 1, reportsTo: "Giulio", desc: "Lavora in laboratorio (produzione). Analisi materie prime. Gestisce spedizioni in entrata. Supporto magazzino materie prime" },
-      { name: "Laura Pontuale", role: "Supporto Gestione Sarte & QC", level: 1, reportsTo: "Debora + Ada", desc: "Controllo conformit\u00E0 in entrata, interfaccia kit sarte, riparazione difetti cucitura, pulizia e preparazione prodotti" },
+      { name: "Giulio", role: "Resp. Produzione & Operations", level: 0, desc: "Programmazione produzione, supervisione reparti produttivi, gestione risorse e obiettivi, monitoraggio fornitori esterni, flussi materiali, elaborazione RdA. NCR e resi B2B. Aggiornamento indicatori qualit\u00E0. Filtro HR (consulente lavoro). Strutturazione aziendale (avvocato, bandi). Backup urgenze B2B in assenza di Simona (non parte admin)" },
+      { name: "Debora Antonini", role: "Resp. Controllo Qualit\u00E0 & Spedizioni Uscita", level: 0, desc: "Controllo finale prodotti, rilevamento difetti, packaging. Preparazione fisica pacchi e spedizioni in uscita (B2C + B2B). Preparazione ordini B2B su indicazione Simona. Magazzino prodotto finito. Invio mail NCR e compilazione file NCR interne" },
+      { name: "Ada", role: "Gestione Sarte & Lavorazioni Manuali", level: 0, note: "Ruolo autonomo", desc: "Si coordina direttamente con le sarte esterne e porta in azienda le lavorazioni da completare. Gestisce in autonomia la filiera di cucitura. Pianificazione kit per modello/variante di comune accordo con Giulio. Sviluppo campionario" },
+      { name: "Federico Costantini", role: "Addetto alla Produzione", level: 1, reportsTo: "Giulio", desc: "Ricezione e smistamento materie prime, taglio materiali, lavorazione, assemblaggio, verifica meccanismi, completamento prodotto finito. Priorit\u00E0 ricevute esclusivamente da Giulio. Nei periodi di minor carico: manutenzione magazzino, ordine laboratorio, produzione modelli Bottega/Coriolo" },
+      { name: "Laura Nocera", role: "Laboratorio & Ricezione Spedizioni", level: 1, reportsTo: "Giulio", desc: "Lavora in laboratorio (produzione). Analisi materie prime. Gestisce spedizioni in entrata (ricezione pacchi, consegna DDT ad Alice). Supporto magazzino materie prime. Non gestisce spedizioni in uscita. Lavorazioni accessori (clip, ecc.) nei momenti di minor carico" },
+      { name: "Laura Pontuale", role: "Supporto Gestione Sarte & QC", level: 1, reportsTo: "Debora + Ada", desc: "Controllo conformit\u00E0 in entrata, interfaccia kit sarte, riparazione difetti cucitura, pulizia e preparazione prodotti, supporto spedizioni, supporto Stile in fase campionario. Ripristino resi: gestisce file resi (registra arrivo, tipo difetto, data riparazione), ripara e comunica completamento a Giulio" },
     ],
     crossLinks: [
       { person: "Debora", to: "Simona", toDept: "admin", type: "Ponte operativo", why: "Coordinamento per la gestione ordini B2B, spedizioni clienti wholesale e magazzino prodotto finito" },
@@ -120,8 +127,10 @@ const PEOPLE = {
     ],
     notes: [
       "Agostino interviene direttamente in laboratorio per risolvere problemi operativi",
-      "Resi B2C e B2B: file condivisi separati. Laura Pontuale: minimo 1h/giorno dedicata a riparazioni resi",
-      "Federico: nei periodi di minor carico supporta manutenzione magazzino, ordine laboratorio, produzione Bottega/Coriolo",
+      "Resi B2C e B2B: file condivisi separati. Laura Pontuale: minimo 1h/giorno dedicata a riparazioni resi \u2014 per B2C \u00E8 fattore strategico, per B2B entro ~35 giorni",
+      "Magazzino: Stile ha magazzino separato (campioni inclusi). Magazzino Produzione sotto supervisione Giulio con supporto Laura N. e Federico",
+      "Federico: nei periodi di minor carico (~aprile, fine settembre) supporta manutenzione magazzino, ordine laboratorio, produzione Bottega/Coriolo",
+      "Bottega/Store: area operativa separata dallo Stile. Produzione Bottega sotto Giulio con Laura Nocera e Federico",
     ],
   },
 };
@@ -137,10 +146,7 @@ function MacroChart({ selectedDept, onSelect }) {
   const benDepts = ["stile", "comunicazione"];
   const agoDepts = ["admin", "produzione"];
   const linkedDepts = new Set();
-  if (selectedDept) {
-    linkedDepts.add(selectedDept);
-    DEPT_LINKS.forEach(l => { if (l.from === selectedDept) linkedDepts.add(l.to); if (l.to === selectedDept) linkedDepts.add(l.from); });
-  }
+  if (selectedDept) { linkedDepts.add(selectedDept); DEPT_LINKS.forEach(l => { if (l.from === selectedDept) linkedDepts.add(l.to); if (l.to === selectedDept) linkedDepts.add(l.from); }); }
   const c = [];
   c.push(h("rect", { key: "bg1", x: 30, y: 25, width: 440, height: 115, rx: 8, fill: "#F4F2EE", opacity: 0.5 }));
   c.push(h("text", { key: "t1", x: 44, y: 42, fill: "#B0A898", fontSize: 7, letterSpacing: "0.16em", fontWeight: 500, style: { fontFamily: font } }, "AREA BENEDETTA"));
@@ -154,11 +160,11 @@ function MacroChart({ selectedDept, onSelect }) {
   c.push(h("text", { key: "an", x: agoX, y: dirY-4, textAnchor: "middle", fill: "#FAFAF6", fontSize: 15, fontWeight: 500, style: { fontFamily: font }, letterSpacing: "0.03em" }, "Agostino"));
   c.push(h("text", { key: "ar", x: agoX, y: dirY+11, textAnchor: "middle", fill: "#A09888", fontSize: 8, style: { fontFamily: font }, letterSpacing: "0.08em" }, "CEO \u00B7 Finanza \u00B7 Produzione"));
   c.push(h("line", { key: "bl", x1: benX, y1: dirY+24, x2: benX, y2: splitY, stroke: "#A09888", strokeWidth: 1, opacity: 0.3 }));
-  benDepts.forEach(id => c.push(h("path", { key: `b-${id}`, d: `M${benX},${splitY} L${deptX[id]},${splitY} L${deptX[id]},${deptY-boxH/2}`, fill: "none", stroke: DEPTS[id].color, strokeWidth: 1.2, opacity: 0.3 })));
+  benDepts.forEach(id => c.push(h("path", { key: "b-"+id, d: "M"+benX+","+splitY+" L"+deptX[id]+","+splitY+" L"+deptX[id]+","+(deptY-boxH/2), fill: "none", stroke: DEPTS[id].color, strokeWidth: 1.2, opacity: 0.3 })));
   c.push(h("line", { key: "al", x1: agoX, y1: dirY+24, x2: agoX, y2: splitY, stroke: "#A09888", strokeWidth: 1, opacity: 0.3 }));
-  agoDepts.forEach(id => c.push(h("path", { key: `a-${id}`, d: `M${agoX},${splitY} L${deptX[id]},${splitY} L${deptX[id]},${deptY-boxH/2}`, fill: "none", stroke: DEPTS[id].color, strokeWidth: 1.2, opacity: 0.3 })));
-  c.push(h("path", { key: "d1", d: `M${benX},${splitY} L${deptX.digital},${splitY} L${deptX.digital},${deptY-boxH/2}`, fill: "none", stroke: DEPTS.digital.color, strokeWidth: 0.8, opacity: 0.2, strokeDasharray: "5,3" }));
-  c.push(h("path", { key: "d2", d: `M${agoX},${splitY} L${deptX.digital},${splitY}`, fill: "none", stroke: DEPTS.digital.color, strokeWidth: 0.8, opacity: 0.2, strokeDasharray: "5,3" }));
+  agoDepts.forEach(id => c.push(h("path", { key: "a-"+id, d: "M"+agoX+","+splitY+" L"+deptX[id]+","+splitY+" L"+deptX[id]+","+(deptY-boxH/2), fill: "none", stroke: DEPTS[id].color, strokeWidth: 1.2, opacity: 0.3 })));
+  c.push(h("path", { key: "d1", d: "M"+benX+","+splitY+" L"+deptX.digital+","+splitY+" L"+deptX.digital+","+(deptY-boxH/2), fill: "none", stroke: DEPTS.digital.color, strokeWidth: 0.8, opacity: 0.2, strokeDasharray: "5,3" }));
+  c.push(h("path", { key: "d2", d: "M"+agoX+","+splitY+" L"+deptX.digital+","+splitY, fill: "none", stroke: DEPTS.digital.color, strokeWidth: 0.8, opacity: 0.2, strokeDasharray: "5,3" }));
   deptOrder.forEach(id => {
     const d = DEPTS[id], x = deptX[id], isSel = selectedDept === id, isLinked = linkedDepts.size > 0 ? linkedDepts.has(id) : true;
     const data = PEOPLE[id], count = data.hierarchy.length, ch = [];
@@ -175,7 +181,7 @@ function MacroChart({ selectedDept, onSelect }) {
     const x1 = deptX[link.from], x2 = deptX[link.to], baseY = deptY+boxH/2+4, arcDepth = 14+i*10, arcY = baseY+arcDepth, midX = (x1+x2)/2;
     const isHi = selectedDept ? (selectedDept === link.from || selectedDept === link.to) : false;
     c.push(h("g", { key: "arc-"+i },
-      h("path", { d: `M${x1},${baseY} C${x1},${arcY} ${x2},${arcY} ${x2},${baseY}`, fill: "none", stroke: isHi ? "#1A1A18" : "#B8B0A0", strokeWidth: isHi ? 2 : 1, strokeDasharray: "7,4", opacity: isHi ? 0.5 : 0.18 }),
+      h("path", { d: "M"+x1+","+baseY+" C"+x1+","+arcY+" "+x2+","+arcY+" "+x2+","+baseY, fill: "none", stroke: isHi ? "#1A1A18" : "#B8B0A0", strokeWidth: isHi ? 2 : 1, strokeDasharray: "7,4", opacity: isHi ? 0.5 : 0.18 }),
       h("text", { x: midX, y: arcY-4, textAnchor: "middle", fill: isHi ? "#1A1A18" : "#A09888", fontSize: isHi ? 8 : 7, fontWeight: isHi ? 600 : 400, style: { fontFamily: font }, opacity: isHi ? 0.85 : 0.4 }, link.label)
     ));
   });
@@ -232,7 +238,7 @@ function DeptDetail({ deptId, onClose }) {
   }
   if (data.intersections) {
     s.push(h("div", { key: "in", style: { padding: "4px 24px 16px" } },
-      h("div", { style: { fontSize: 8.5, letterSpacing: "0.16em", textTransform: "uppercase", color: "#A09888", marginBottom: 10, fontWeight: 500, fontFamily: font, paddingTop: 14, borderTop: "1px solid #F0ECE4" } }, "Intersezioni con Digital"),
+      h("div", { style: { fontSize: 8.5, letterSpacing: "0.16em", textTransform: "uppercase", color: "#A09888", marginBottom: 10, fontWeight: 500, fontFamily: font, paddingTop: 14, borderTop: "1px solid #F0ECE4" } }, "Intersezioni con Digital (aree condivise)"),
       h("div", { style: { border: "1px solid #E4E0D8", borderRadius: 6, overflow: "hidden" } },
         h("div", { style: { display: "grid", gridTemplateColumns: "100px 1fr 1fr", background: "#FAFAF6", borderBottom: "1px solid #E4E0D8" } },
           h("div", { style: { padding: "8px 12px", fontSize: 9, fontWeight: 600, fontFamily: font, color: "#888" } }, "Area"),
@@ -260,6 +266,14 @@ function DeptDetail({ deptId, onClose }) {
             h("div", { style: { fontSize: 9.5, color: "#6A6858", fontFamily: font, marginTop: 2 } }, ext.what)
           )
         )
+      )
+    ));
+  }
+  if (data.notInScope) {
+    s.push(h("div", { key: "nis", style: { padding: "4px 24px 16px" } },
+      h("div", { style: { fontSize: 8.5, letterSpacing: "0.16em", textTransform: "uppercase", color: "#A09888", marginBottom: 10, fontWeight: 500, fontFamily: font, paddingTop: 14, borderTop: "1px solid #F0ECE4" } }, "Non in perimetro"),
+      ...data.notInScope.map((item, i) =>
+        h("div", { key: i, style: { padding: "8px 14px", background: "#F8F7F4", borderLeft: "3px solid #D0C8B8", borderRadius: 3, fontSize: 10.5, color: "#6A6858", lineHeight: 1.6, fontFamily: font, marginBottom: 4 } }, item)
       )
     ));
   }
